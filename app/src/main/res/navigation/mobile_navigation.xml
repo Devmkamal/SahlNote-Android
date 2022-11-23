@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/nav_login">
+
+    <fragment
+            android:id="@+id/nav_notes"
+            android:name="com.kamal.sahlsample.ui.notes.list.NotesFragment"
+            android:label="@string/menu_notes"
+            tools:layout="@layout/fragment_note">
+        <action
+                android:id="@+id/action_nav_notes_to_nav_add_note"
+                app:popUpTo="@id/nav_notes"
+                app:destination="@id/nav_add_note"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/nav_login"
+            android:name="com.kamal.sahlsample.ui.login.LoginFragment"
+            android:label="@string/menu_notes"
+            tools:layout="@layout/fragment_login">
+
+        <action
+                android:id="@+id/action_nav_login_to_nav_notes"
+                app:destination="@id/nav_notes"/>
+
+        <action
+                android:id="@+id/action_nav_login_to_nav_register"
+                app:destination="@id/nav_register"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/nav_register"
+            android:name="com.kamal.sahlsample.ui.register.RegisterFragment"
+            android:label="@string/menu_notes"
+            tools:layout="@layout/fragment_register">
+        <action
+                android:id="@+id/action_nav_register_to_nav_notes"
+                app:destination="@id/nav_notes"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/nav_add_note"
+            android:name="com.kamal.sahlsample.ui.notes.add.AddNoteFragment"
+            android:label="@string/menu_notes"
+            tools:layout="@layout/fragment_add_notes">
+
+    </fragment>
+</navigation>
